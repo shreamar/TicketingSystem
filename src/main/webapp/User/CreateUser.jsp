@@ -11,7 +11,7 @@
     <title>Create New User</title>
     <script language="JavaScript">
         var passwordMatch = function () {
-            if (document.userForm.createPassword.value == document.userForm.confirmPassword.value) {
+            if (document.userForm.password.value == document.userForm.confirmPassword.value) {
                 document.getElementById('message').style.color = 'green';
                 document.getElementById('message').innerHTML = '[Matching]';
             } else {
@@ -40,7 +40,7 @@
     Phone :<input type="text" name="phone" placeholder="1234567890">
     <hr>
     Username :<input type="text" name="username" placeholder="Username"><br>
-    Create Password :<input type="password" name="createPassword" placeholder="Create Password" onkeyup="passwordMatch();"><br>
+    Create Password :<input type="password" name="password" placeholder="Create Password" onkeyup="passwordMatch();"><br>
     Confirm Password <input type="password" name="confirmPassword" placeholder="Confirm Password" onkeyup="passwordMatch();">
     <span id="message"></span>
     <hr>

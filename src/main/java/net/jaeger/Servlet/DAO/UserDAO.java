@@ -27,4 +27,8 @@ public class UserDAO {
         }
         return null;
     }
+
+    public boolean saveUser(User user){
+        return false;
+    }
 }
