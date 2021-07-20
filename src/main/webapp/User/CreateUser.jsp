@@ -24,18 +24,18 @@
 <body>
 <h1>Create New User</h1>
 <form method="post" action="CreateUserServlet" name="userForm">
-    Firstname :<input type="text" name="firtName" placeholder="FirstName">
+    Firstname :<input type="text" name="firstName" placeholder="FirstName">
     Middlename :<input type="text" name="middleName" placeholder="MiddleName">
     Lastname :<input type="text" name="lastName" placeholder="LastName"><br>
-    Gender :<input type="radio" name="gender" value="Female">Female
-    <input type="radio" name="gender" value="Male">Male
-    <input type="radio" name="gender" value="Other">Other<br>
+    Gender :<input type="radio" name="gender" value="F" checked>Female
+    <input type="radio" name="gender" value="M">Male
+    <input type="radio" name="gender" value="O">Other<br>
     Age :<input type="number" name="age" placeholder="Age"><br>
     Address Line :<input type="text" name="addressLine" placeholder="Address Line"><br>
     Unit # :<input type="text" name="addressUnit" placeholder="Unit/Apartment">
     City :<input type="text" name="city" placeholder="City">
     State :<input type="text" name="state" placeholder="State">
-    Zipcode :<input type="number" name="zipcode" placeholder="12345" max="99999" min="00000"><br>
+    Zipcode :<input type="number" name="zipCode" placeholder="12345"><br>
     Email :<input type="email" name="email" placeholder="jaeger@airlines.com">
     Phone :<input type="text" name="phone" placeholder="1234567890">
     <hr>

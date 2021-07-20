@@ -29,6 +29,19 @@ public class UserDAO {
     }
 
     public boolean saveUser(User user){
-        return false;
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ticketing");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+            EntityTransaction entityTransaction = entityManager.getTransaction();
+            entityTransaction.begin();
+            entityManager.persist(user);
+            entityTransaction.commit();
+            return true;
+        }
+        catch (Exception exception){
+            exception.printStackTrace();
+            return false;
+        }
     }
 }

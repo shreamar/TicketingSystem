@@ -23,4 +23,8 @@ public class UserService {
         }
         return false;
     }
+
+    public boolean saveUser(User user){
+        return userDAO.saveUser(user);
+    }
 }
