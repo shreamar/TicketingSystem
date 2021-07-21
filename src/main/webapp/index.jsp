@@ -29,7 +29,8 @@
                     <input type="password" name="password" placeholder="Password">
                     <a class="forgot text-muted" href="#">Forgot password?</a>
                     <input type="submit" name="" value="Login">
-                    <a class="forgot text-muted" href="User/CreateUser.jsp">Create New Account</a>
+                    <a class="forgot text-muted" href="User/CreateUser.jsp">Create New Account</a><br>
+                    <h4><a class="link-success" href="Flight/ListFlights.jsp">See Available Flights</a></h4>
                     <div class="col-md-12">
                         <ul class="social-network social-circle">
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>

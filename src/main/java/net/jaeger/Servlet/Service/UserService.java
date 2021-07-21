@@ -3,6 +3,8 @@ package net.jaeger.Servlet.Service;
 import net.jaeger.Servlet.DAO.UserDAO;
 import net.jaeger.Servlet.Modal.User;
 
+import java.util.List;
+
 public class UserService {
     private UserDAO userDAO;
 
@@ -10,9 +12,15 @@ public class UserService {
         userDAO = new UserDAO();
     }
 
-    public User getUser(String username) {
-        User user = userDAO.getUser(username);
-        return user;
+    public User getUserByUsername(String userName) {
+        List<User> users = userDAO.getAllUsers();
+        for (User user: users){
+//            return user;
+            if(user.getUsername().equalsIgnoreCase(userName.toLowerCase())){
+                return user;
+            }
+        }
+        return null;
     }
 
     public boolean loginAuthenticate(User user, String username, String password) {

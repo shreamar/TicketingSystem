@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 
         PrintWriter printWriter = response.getWriter();
 //        printWriter.println("<html><body><h1>"+userService.getUser(username).getPassword().toUpperCase()+"</h1></body></html>");
-        if(userService.loginAuthenticate(userService.getUser(username),username,password)){
+        if(userService.loginAuthenticate(userService.getUserByUsername(username),username,password)){
             printWriter.println("<html><body><h1>Login Successful.</h1></body></html>");
         }
         else{
