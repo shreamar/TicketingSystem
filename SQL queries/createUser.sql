@@ -1,6 +1,6 @@
 use ticketing;
 create table user
-(userID int primary key,
+(userID int primary key auto_increment,
 username varchar(50),
 password varchar(100),
 firstName varchar(100),
@@ -17,5 +17,5 @@ email varchar(100),
 phone varchar(20)
 );
 
-insert into user
-values(1,"shreamar","password","Amar","","Shrestha",'m',27,"1227 S. 4th Ave.","13","Pocatello","Idaho",83201,"shreamar@isu.edu","2083808818");
+insert into user(username,password,firstName,middleName,lastName,gender,age,addressLine,addressUnit,city,state,zipCode,email,phone)
+values("shreamar","password","Amar","","Shrestha",'m',27,"1227 S. 4th Ave.","13","Pocatello","Idaho",83201,"shreamar@isu.edu","2083808818");
