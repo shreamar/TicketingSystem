@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card">
-                <form action="LoginServlet" method="post" class="box">
+                <form action="/TicketingSystem_war_exploded/login" method="post" class="box">
                     <h1>Jaeger Airlines</h1>
                     <p class="text-muted"> Please enter your login and password!</p>
                     <input type="text" name="username" placeholder="Username">
@@ -30,7 +30,7 @@
                     <a class="forgot text-muted" href="#">Forgot password?</a>
                     <input type="submit" name="" value="Login">
                     <a class="forgot text-muted" href="User/CreateUser.jsp">Create New Account</a><br>
-                    <h4><a class="link-success" href="Flight/ListFlights.jsp">See Available Flights</a></h4>
+                    <h3><a class="link-success" href="/TicketingSystem_war_exploded/display-flights">See Available Flights</a></h3>
                     <div class="col-md-12">
                         <ul class="social-network social-circle">
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>

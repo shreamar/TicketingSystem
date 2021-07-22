@@ -1,4 +1,8 @@
-<%--
+<%@ page import="net.jaeger.Servlet.Modal.Flight" %>
+<%@ page import="java.util.List" %>
+<%@ page import="net.jaeger.Servlet.Service.FlightService" %>
+<%@ page import="net.jaeger.Servlet.Service.PlaneService" %>
+<%@ page import="net.jaeger.Servlet.Modal.Plane" %><%--
   Created by IntelliJ IDEA.
   User: Amar Shrestha
   Date: 7/20/2021
@@ -9,6 +13,11 @@
 <html>
 <head>
     <title>Flights</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="card"><h1>Flights</h1></div>
@@ -21,17 +30,29 @@
     <th scope="col">Arrival</th>
     <th scope="col">Arrival Date/Time</th>
     <th scope="col">Remaining Seats</th>
+    <th scope="col">Base Price</th>
     <th scope="col">Actions</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-  </tr>
-
+  <%
+    List<Flight> flights = (List<Flight>)request.getAttribute("flightList");
+    FlightService flightService = new FlightService();
+    for(Flight flight: flights){
+  %>
+    <tr>
+      <th scope="row"><%=flightService.getFlightNumber(flight)%></th>
+      <td><%=flight.getOrigin()%></td>
+      <td><%=flight.getLeaveTime()%></td>
+      <td><%=flight.getDestination()%></td>
+      <td><%=flight.getArriveTime()%></td>
+      <td><%=flightService.getSeatAvailable(flight)%></td>
+      <td>$<%=flight.getOneWayPrice()%></td>
+      <td><a href="#" class="btn btn-primary">View Details</a>|<a href="#" class="btn btn-success">Reserve Flight</a> </td>
+    </tr>
+  <%
+    }
+  %>
   </tbody>
 </table>
 

@@ -23,7 +23,7 @@
 </head>
 <body>
 <h1>Create New User</h1>
-<form method="post" action="CreateUserServlet" name="userForm">
+<form method="post" action="/create-user" name="userForm">
     Firstname :<input type="text" name="firstName" placeholder="FirstName">
     Middlename :<input type="text" name="middleName" placeholder="MiddleName">
     Lastname :<input type="text" name="lastName" placeholder="LastName"><br>
