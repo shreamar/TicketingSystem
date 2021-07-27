@@ -38,4 +38,22 @@ public class FlightService {
         PlaneService planeService = new PlaneService();
         return planeService.getPlaneByID(flight.getPlaneID()).getPlaneCode();
     }
+
+    public Flight getFlightByID(int id){
+        for(Flight flight: flightDAO.getAllFlights()){
+            if(flight.getFlightID() == id){
+                return flight;
+            }
+        }
+        return null;
+    }
+
+    public boolean updateFlight(Flight flight){
+        if(flightDAO.updateFlight(flight)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

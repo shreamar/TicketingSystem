@@ -9,29 +9,42 @@ import java.util.Locale;
 
 public class UserDAO {
 
-    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ticketing");
-    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    EntityManagerFactory entityManagerFactory = null;
+    EntityManager entityManager = null;
+    EntityTransaction entityTransaction = null;
 
     public List<User> getAllUsers() {
-
-//        EntityTransaction entityTransaction = entityManager.getTransaction();
-//        entityTransaction.begin();
-
-        Query query = entityManager.createQuery("select t from User t");
-        return query.getResultList();
+        try {
+            entityManagerFactory = Persistence.createEntityManagerFactory("ticketing");
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query = entityManager.createQuery("select t from User t");
+            return query.getResultList();
+        }catch(Exception e){
+            e.printStackTrace();
+            entityTransaction.rollback();
+            return null;
+        }finally{
+//            entityManager.close();
+//            entityManagerFactory.close();
+        }
     }
 
     public boolean saveUser(User user){
         try {
-            EntityTransaction entityTransaction = entityManager.getTransaction();
+            entityManagerFactory = Persistence.createEntityManagerFactory("ticketing");
+            entityManager = entityManagerFactory.createEntityManager();
             entityTransaction.begin();
             entityManager.persist(user);
             entityTransaction.commit();
             return true;
         }
-        catch (Exception exception){
-            exception.printStackTrace();
+        catch(Exception e){
+            e.printStackTrace();
+            entityTransaction.rollback();
             return false;
+        }finally{
+//            entityManager.close();
+//            entityManagerFactory.close();
         }
     }
 }

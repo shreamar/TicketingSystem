@@ -30,7 +30,8 @@
                     <a class="forgot text-muted" href="#">Forgot password?</a>
                     <input type="submit" name="" value="Login">
                     <a class="forgot text-muted" href="User/CreateUser.jsp">Create New Account</a><br>
-                    <h3><a class="link-success" href="/TicketingSystem_war_exploded/display-flights">See Available Flights</a></h3>
+                    <h3><a class="link-success" href="/TicketingSystem_war_exploded/book">Book Flights</a></h3>
+                    <h3><a class="link-success" href="/TicketingSystem_war_exploded/flights">Search Flights</a></h3>
                     <div class="col-md-12">
                         <ul class="social-network social-circle">
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>

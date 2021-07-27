@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/create-user")
-public class CreateUserServlet extends HttpServlet {
+@WebServlet("/user")
+public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
 
         User user  = new User();
         user.setUsername(request.getParameter("username"));
